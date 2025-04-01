@@ -7,6 +7,7 @@ package view;
 import dao.TaxPayerDao;
 import model.TaxPayer;
 
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
 
@@ -36,11 +37,16 @@ public class ReadData extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        Back = new javax.swing.JButton();
+        nameTxt = new javax.swing.JTextField();
+        TinTxt = new javax.swing.JTextField();
+        nidTxt = new javax.swing.JTextField();
+        amountTxt = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        tinTxt = new javax.swing.JTextField();
+        searchBtn = new javax.swing.JButton();
+        clearBtn = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SEARCH A TAX PAYER\n");
@@ -57,25 +63,48 @@ public class ReadData extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
         jLabel5.setText("Amount:");
 
-        jButton1.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
-        jButton1.setText("Go Back");
+        Back.setBackground(new java.awt.Color(255, 255, 204));
+        Back.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
+        Back.setText("Go Back");
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackActionPerformed(evt);
+            }
+        });
 
-        jTextField1.setText("jTextField1");
+        jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        jLabel1.setText("Enter TIN to search:");
 
-        jTextField2.setText("jTextField2");
+        searchBtn.setBackground(new java.awt.Color(255, 255, 204));
+        searchBtn.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        searchBtn.setText("Search");
+        searchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBtnActionPerformed(evt);
+            }
+        });
 
-        jTextField3.setText("jTextField3");
+        clearBtn.setBackground(new java.awt.Color(255, 255, 204));
+        clearBtn.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
+        clearBtn.setText("Clear");
+        clearBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearBtnActionPerformed(evt);
+            }
+        });
 
-        jTextField4.setText("jTextField4");
+        jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        jLabel6.setText("TAX PAYER INFORMATION...");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel4)
@@ -83,41 +112,96 @@ public class ReadData extends javax.swing.JFrame {
                             .addComponent(jLabel2))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField4)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Back)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(clearBtn))
+                            .addComponent(nameTxt)
+                            .addComponent(TinTxt)
+                            .addComponent(nidTxt)
+                            .addComponent(amountTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(jButton1)))
-                .addContainerGap(116, Short.MAX_VALUE))
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(tinTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(searchBtn)))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(61, 61, 61)
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1)
+                    .addComponent(tinTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(searchBtn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(nameTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TinTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nidTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addComponent(jButton1)
-                .addContainerGap(61, Short.MAX_VALUE))
+                    .addComponent(amountTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Back)
+                    .addComponent(clearBtn))
+                .addGap(39, 39, 39))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new DisplayAllData().setVisible(true);
+    }//GEN-LAST:event_BackActionPerformed
+
+    private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
+        // TODO add your handling code here:
+        clearFields();
+    }//GEN-LAST:event_clearBtnActionPerformed
+
+    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+        // TODO add your handling code here:
+        if (!tinTxt.getText().trim().isEmpty()) {
+            TaxPayerDao dao = new TaxPayerDao();
+            String tinToSearch = tinTxt.getText();
+            TaxPayer result = dao.getTaxPayerByTin(tinToSearch);
+            if (result != null) {
+                nameTxt.setText(result.getNames());
+                TinTxt.setText(result.getTin());
+                amountTxt.setText(String.valueOf(result.getAmount()));
+                nidTxt.setText(result.getNid());
+            } else {
+                JOptionPane.showMessageDialog(null, "TaxPayer not found!");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Please enter a TIN number.");
+        }
+    }//GEN-LAST:event_searchBtnActionPerformed
+
+    // Method to Clear Input Fields
+    private void clearFields() {
+        nameTxt.setText("");
+        TinTxt.setText("");
+        nidTxt.setText("");
+        amountTxt.setText("");
+        tinTxt.setText("");
+    }
 
     /**
      * @param args the command line arguments
@@ -158,14 +242,19 @@ public class ReadData extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Back;
+    private javax.swing.JTextField TinTxt;
+    private javax.swing.JTextField amountTxt;
+    private javax.swing.JButton clearBtn;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JTextField nameTxt;
+    private javax.swing.JTextField nidTxt;
+    private javax.swing.JButton searchBtn;
+    private javax.swing.JTextField tinTxt;
     // End of variables declaration//GEN-END:variables
 }

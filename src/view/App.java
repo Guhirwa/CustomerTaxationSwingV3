@@ -171,7 +171,7 @@ public class App extends javax.swing.JFrame {
     private void ReadLinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReadLinkActionPerformed
         // TODO add your handling code here:
         setVisible(false);
-        new ReadData().setVisible(true);
+        new DisplayAllData().setVisible(true);
     }//GEN-LAST:event_ReadLinkActionPerformed
 
     private void CancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButtonActionPerformed

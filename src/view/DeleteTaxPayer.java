@@ -36,7 +36,18 @@ public class DeleteTaxPayer extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         yesTxt = new javax.swing.JTextField();
         SearchTin = new javax.swing.JButton();
-        CancelButton = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        nameTxt = new javax.swing.JTextField();
+        tinTxt = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        nidTxt = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        amountTxt = new javax.swing.JTextField();
+        confirmDeletion = new javax.swing.JButton();
+        cancelBtn = new javax.swing.JButton();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -50,64 +61,161 @@ public class DeleteTaxPayer extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("TaxPayer Deletion Form");
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
-        jLabel1.setText("TaxPayer Deletion Form");
 
         jLabel7.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
         jLabel7.setText("Enter TaxPayer TIN:");
 
+        SearchTin.setBackground(new java.awt.Color(255, 255, 204));
         SearchTin.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
-        SearchTin.setText("Yes");
+        SearchTin.setText("Search");
         SearchTin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SearchTinActionPerformed(evt);
             }
         });
 
-        CancelButton.setBackground(new java.awt.Color(255, 102, 102));
-        CancelButton.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
-        CancelButton.setText("Cancel");
-        CancelButton.addActionListener(new java.awt.event.ActionListener() {
+        jLabel6.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        jLabel6.setText("Are you sure you want to delete the TaxPayer of the below informations?");
+
+        jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        jLabel2.setText("Names:");
+
+        tinTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelButtonActionPerformed(evt);
+                tinTxtActionPerformed(evt);
             }
         });
+
+        jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        jLabel3.setText("TIN:");
+
+        jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        jLabel4.setText("National_ID:");
+
+        nidTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nidTxtActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        jLabel5.setText("Amount:");
+
+        confirmDeletion.setBackground(new java.awt.Color(255, 255, 204));
+        confirmDeletion.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        confirmDeletion.setText("Confirm");
+        confirmDeletion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmDeletionActionPerformed(evt);
+            }
+        });
+
+        cancelBtn.setBackground(new java.awt.Color(255, 102, 102));
+        cancelBtn.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        cancelBtn.setText("Cancel");
+        cancelBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel4)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addGap(66, 66, 66)
+                            .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel5))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(amountTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tinTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(confirmDeletion)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(cancelBtn))
+                                    .addComponent(nidTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(nameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(amountTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(tinTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nidTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cancelBtn)
+                    .addComponent(confirmDeletion))
+                .addGap(13, 13, 13))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel7)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(SearchTin, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(CancelButton))
-                    .addComponent(yesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(109, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(18, 18, 18)
+                        .addComponent(yesTxt)
+                        .addGap(18, 18, 18)
+                        .addComponent(SearchTin, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(77, 77, 77))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(147, 147, 147)
                 .addComponent(jLabel1)
-                .addGap(41, 41, 41)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 8, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(yesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SearchTin)
-                    .addComponent(CancelButton))
-                .addContainerGap(90, Short.MAX_VALUE))
+                    .addComponent(yesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SearchTin))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -115,29 +223,62 @@ public class DeleteTaxPayer extends javax.swing.JFrame {
 
     private void SearchTinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchTinActionPerformed
         // TODO add your handling code here:
-        if (yesTxt != null) {
+        if (!yesTxt.getText().trim().isEmpty()) {
             TaxPayerDao dao = new TaxPayerDao();
             String tinToSearch = yesTxt.getText();
             TaxPayer result = dao.getTaxPayerByTin(tinToSearch);
-
             if (result != null) {
-                int rowAffected = dao.deleteTaxPayer(tinToSearch);
-                if(rowAffected > 0){
-                    JOptionPane.showMessageDialog(null, "Data Deleted Successful!");
-                }
-            } else{
-                JOptionPane.showMessageDialog(null, "Data Not Delete!");
+                 nameTxt.setText(result.getNames());
+                 tinTxt.setText(result.getTin());
+                 amountTxt.setText(String.valueOf(result.getAmount()));
+                 nidTxt.setText(result.getNid());
+            } else {
+                JOptionPane.showMessageDialog(null, "TaxPayer not found!");
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Empty text field is not allowed. Fill in something.");
+            JOptionPane.showMessageDialog(null, "Please enter a TIN number.");
         }
     }//GEN-LAST:event_SearchTinActionPerformed
 
-    private void CancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButtonActionPerformed
+    private void tinTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tinTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tinTxtActionPerformed
+
+    private void nidTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nidTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nidTxtActionPerformed
+
+    private void confirmDeletionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmDeletionActionPerformed
+        // TODO add your handling code here:
+            TaxPayerDao dao = new TaxPayerDao();
+            String tinToSearch = yesTxt.getText();
+            TaxPayer result = dao.getTaxPayerByTin(tinToSearch);
+            if (result != null) {
+                int rowAffected = dao.deleteTaxPayer(tinToSearch);
+                if (rowAffected > 0) {
+                    JOptionPane.showMessageDialog(null, "Tax Payer with TIN [" + tinToSearch + "] Deleted Successful");
+            } else {
+                JOptionPane.showMessageDialog(null, "Delete Failed");
+            }
+        } else {
+                JOptionPane.showMessageDialog(null, "Tax Payer with TIN [" + tinToSearch + "] not found in the database");
+            }
+            clearField();
+    }//GEN-LAST:event_confirmDeletionActionPerformed
+
+    public void clearField() {
+        yesTxt.setText("");
+        nameTxt.setText("");
+        tinTxt.setText("");
+        amountTxt.setText("");
+        nidTxt.setText("");
+    }
+
+    private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
         // TODO add your handling code here:
         setVisible(false);
         new App().setVisible(true);
-    }//GEN-LAST:event_CancelButtonActionPerformed
+    }//GEN-LAST:event_cancelBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,11 +316,22 @@ public class DeleteTaxPayer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CancelButton;
     private javax.swing.JButton SearchTin;
+    private javax.swing.JTextField amountTxt;
+    private javax.swing.JButton cancelBtn;
+    private javax.swing.JButton confirmDeletion;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField nameTxt;
+    private javax.swing.JTextField nidTxt;
+    private javax.swing.JTextField tinTxt;
     private javax.swing.JTextField yesTxt;
     // End of variables declaration//GEN-END:variables
 }

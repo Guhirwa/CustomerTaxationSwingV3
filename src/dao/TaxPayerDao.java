@@ -3,7 +3,11 @@ package dao;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
 import model.TaxPayer;
+import view.DisplayAllData;
+
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
