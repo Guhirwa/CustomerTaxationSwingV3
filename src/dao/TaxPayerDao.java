@@ -11,8 +11,8 @@ import model.TaxPayer;
  */
 public class TaxPayerDao {
     private String dbUrl = "jdbc:mysql://localhost:3306/Taxation";
-    private String dbUsername = "@Guhirwa"; // Use your actual DB username
-    private String dbPasswd = "@Guhirwa9188@"; // Use your actual DB password
+    private String dbUsername = "@Guhirwa";
+    private String dbPasswd = "@Guhirwa9188@";
 
     // CREATE (Insert) TaxPayer
     public int createTaxPayer(TaxPayer taxPayerObj) {
@@ -37,9 +37,9 @@ public class TaxPayerDao {
         try (Connection con = DriverManager.getConnection(dbUrl, dbUsername, dbPasswd)) {
             String sql = "SELECT * FROM TaxPayer WHERE TIN=?";
             PreparedStatement pst = con.prepareStatement(sql);
-            pst.setString(1, tin); // Set the provided TIN in the query
+            pst.setString(1, tin);
 
-            ResultSet rs = pst.executeQuery(); // Execute the query
+            ResultSet rs = pst.executeQuery();
 
             if (rs.next()) {
                 // If a record is found, create a TaxPayer object with the retrieved data

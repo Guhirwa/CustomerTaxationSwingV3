@@ -52,6 +52,5 @@ public class TaxPayer {
     public void setAmount(Double amount) {
         this.amount = amount;
     }
-   
-   
+
 }

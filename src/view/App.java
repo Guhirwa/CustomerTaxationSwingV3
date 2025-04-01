@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.*;
+
 /**
  *
  * @author Guhirwa
@@ -34,14 +36,16 @@ public class App extends javax.swing.JFrame {
         DeleteLink = new javax.swing.JButton();
         ReadLink = new javax.swing.JButton();
         CancelButton = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("TAX PAYER REGISTRATION SYSTEM");
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
         jLabel1.setText("Welcome !!!");
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        jLabel2.setText("Choose the activity you want to perform");
+        jLabel2.setText("Choose the activity you want to perform:");
 
         CreateLink.setBackground(new java.awt.Color(255, 255, 204));
         CreateLink.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
@@ -88,51 +92,59 @@ public class App extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setText("Perform CRUD Operation to the taxPayer informations");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(CreateLink)
+                .addGap(54, 54, 54)
+                .addComponent(UpdateLink)
+                .addGap(49, 49, 49)
+                .addComponent(DeleteLink)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(ReadLink)
+                .addGap(35, 35, 35))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(CreateLink)
-                        .addGap(42, 42, 42)
-                        .addComponent(UpdateLink)
-                        .addGap(37, 37, 37)
-                        .addComponent(DeleteLink)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                        .addComponent(ReadLink))
+                        .addGap(180, 180, 180)
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel2)
+                        .addGap(67, 67, 67)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(CancelButton)
-                .addGap(169, 169, 169))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(75, 75, 75))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(CancelButton)
+                        .addGap(208, 208, 208))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(36, 36, 36)
                 .addComponent(jLabel2)
-                .addGap(28, 28, 28)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CreateLink)
                     .addComponent(UpdateLink)
                     .addComponent(DeleteLink)
                     .addComponent(ReadLink))
-                .addGap(48, 48, 48)
+                .addGap(34, 34, 34)
                 .addComponent(CancelButton)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
 
         pack();
@@ -164,6 +176,7 @@ public class App extends javax.swing.JFrame {
 
     private void CancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButtonActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Thank you for using our system!!");
         System.exit(0);
     }//GEN-LAST:event_CancelButtonActionPerformed
 
@@ -211,5 +224,6 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JButton UpdateLink;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
