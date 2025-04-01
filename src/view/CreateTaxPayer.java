@@ -42,26 +42,32 @@ public class CreateTaxPayer extends javax.swing.JFrame {
         nidTxt = new javax.swing.JTextField();
         amountTxt = new javax.swing.JTextField();
         registerBtn = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        BackBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tax Payer Registration Page");
 
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        jLabel1.setText("Tax Payer Registration Page");
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
-        jLabel2.setText("Names:");
+        jLabel2.setText("Names*:");
 
         jLabel3.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
-        jLabel3.setText("TIN:");
+        jLabel3.setText("TIN*:");
 
         jLabel4.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
-        jLabel4.setText("National ID:");
+        jLabel4.setText("National ID*:");
 
         jLabel5.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
-        jLabel5.setText("Amount:");
+        jLabel5.setText("Amount*:");
+
+        namesTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                namesTxtActionPerformed(evt);
+            }
+        });
 
         registerBtn.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
         registerBtn.setText("Register");
@@ -71,12 +77,12 @@ public class CreateTaxPayer extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 102, 102));
-        jButton1.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
-        jButton1.setText("Close");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BackBtn.setBackground(new java.awt.Color(255, 102, 102));
+        BackBtn.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
+        BackBtn.setText("Close");
+        BackBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BackBtnActionPerformed(evt);
             }
         });
 
@@ -87,60 +93,58 @@ public class CreateTaxPayer extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(namesTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
-                                    .addComponent(tinTxt)))
+                                .addGap(33, 33, 33)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel5))
+                                .addGap(22, 22, 22))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nidTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap()
+                                .addComponent(jLabel4)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(amountTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(registerBtn)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton1))))))
+                                .addComponent(registerBtn)
+                                .addGap(39, 39, 39)
+                                .addComponent(BackBtn))
+                            .addComponent(tinTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nidTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(amountTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(namesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addComponent(jLabel1)))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel1)
-                .addGap(46, 46, 46)
+                .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(namesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
+                    .addComponent(namesTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(tinTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
+                    .addComponent(tinTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(18, 26, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(nidTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
+                    .addComponent(nidTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(amountTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
+                .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(registerBtn)
-                    .addComponent(jButton1))
-                .addContainerGap(31, Short.MAX_VALUE))
+                    .addComponent(BackBtn))
+                .addGap(35, 35, 35))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -165,23 +169,35 @@ public class CreateTaxPayer extends javax.swing.JFrame {
 
     private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
         // create model object
-        TaxPayer taxPayerObj = new TaxPayer();
-        taxPayerObj.setNames(namesTxt.getText());
-        taxPayerObj.setNid(nidTxt.getText());
-        taxPayerObj.setTin(tinTxt.getText());
-        double amount = Double.parseDouble(amountTxt.getText());
-        taxPayerObj.setAmount(amount);
+        if (namesTxt.getText().trim().isEmpty() ||
+                nidTxt.getText().trim().isEmpty() ||
+                tinTxt.getText().trim().isEmpty() ||
+                amountTxt.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "All fields must be filled");
+        } else {
+            TaxPayer taxPayerObj = new TaxPayer();
+            taxPayerObj.setNames(namesTxt.getText());
+            taxPayerObj.setNid(nidTxt.getText());
+            taxPayerObj.setTin(tinTxt.getText());
 
-        // send to DAO
-        TaxPayerDao dao = new TaxPayerDao();
-        int rowAffected = dao.createTaxPayer(taxPayerObj);
-        if(rowAffected > 0){
-            JOptionPane.showMessageDialog(null, "Data Saved Successful!");
-            clearFields();
-        }else{
-            JOptionPane.showMessageDialog(null, "Data Not Saved!");
+            try {
+                double amount = Double.parseDouble(amountTxt.getText());
+                taxPayerObj.setAmount(amount);
+
+                // Send to DAO
+                TaxPayerDao dao = new TaxPayerDao();
+                int rowAffected = dao.createTaxPayer(taxPayerObj);
+
+                if (rowAffected > 0) {
+                    JOptionPane.showMessageDialog(null, "Data Saved Successfully!");
+                    clearFields();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Data Not Saved!");
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Please enter a valid amount!");
+            }
         }
-
 
     }//GEN-LAST:event_registerBtnActionPerformed
 
@@ -193,11 +209,15 @@ public class CreateTaxPayer extends javax.swing.JFrame {
         amountTxt.setText("");
     }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackBtnActionPerformed
         // TODO add your handling code here:
         setVisible(false);
         new App().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BackBtnActionPerformed
+
+    private void namesTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namesTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_namesTxtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,8 +258,8 @@ public class CreateTaxPayer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackBtn;
     private javax.swing.JTextField amountTxt;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
