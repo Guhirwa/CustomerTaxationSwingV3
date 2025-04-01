@@ -80,7 +80,7 @@ public class DisplayAllTaxPayers extends javax.swing.JFrame {
     private void goBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBackActionPerformed
         // TODO add your handling code here:
         setVisible(false);
-        new BufferClass().setVisible(true);
+        new App().setVisible(true);
         
     }//GEN-LAST:event_goBackActionPerformed
 

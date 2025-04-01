@@ -11,7 +11,7 @@ import javax.swing.*;
 
 /**
  *
- * @author it-student
+ * @author Guhirwa
  */
 public class DeleteTaxPayer extends javax.swing.JFrame {
 
@@ -136,7 +136,7 @@ public class DeleteTaxPayer extends javax.swing.JFrame {
     private void CancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButtonActionPerformed
         // TODO add your handling code here:
         setVisible(false);
-        new BufferClass().setVisible(true);
+        new App().setVisible(true);
     }//GEN-LAST:event_CancelButtonActionPerformed
 
     /**

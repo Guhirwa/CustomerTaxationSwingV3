@@ -10,7 +10,7 @@ import javax.swing.*;
 
 /**
  *
- * @author it-student
+ * @author Guhirwa
  */
 public class UpdateTaxPayer extends javax.swing.JFrame {
 
@@ -127,7 +127,7 @@ public class UpdateTaxPayer extends javax.swing.JFrame {
     private void CancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButtonActionPerformed
         // TODO add your handling code here:
         setVisible(false);
-        new BufferClass().setVisible(true);
+        new App().setVisible(true);
     }//GEN-LAST:event_CancelButtonActionPerformed
 
     /**
